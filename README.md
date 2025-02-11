@@ -42,6 +42,7 @@ More updates coming soon!
 
 
 ### Showcase
-![Snímek obrazovky 2025-01-11 110601](https://github.com/user-attachments/assets/57bea1e8-242d-4802-b0ef-82428a5ee399)
-![Snímek obrazovky 2025-01-11 110456](https://github.com/user-attachments/assets/b3fb6219-3f0e-45fb-ab38-b44dbaf2dc3a)
-![Snímek obrazovky 2025-01-11 110400](https://github.com/user-attachments/assets/10d62e68-cf76-401f-98f7-b6c3f255f6e0)
+![Snímek obrazovky 2025-01-11 110400](https://github.com/user-attachments/assets/0226bb03-3dce-42a5-b0e1-96d661bf50ff)
+![Snímek obrazovky 2025-01-11 110601](https://github.com/user-attachments/assets/3c794b8c-a0cc-493c-ab0e-5846db731918)
+![Snímek obrazovky 2025-01-11 110456](https://github.com/user-attachments/assets/8d55d03b-09e6-40b4-be7d-2e0e1a54656c)
+
