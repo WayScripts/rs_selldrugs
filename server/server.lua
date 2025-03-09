@@ -19,7 +19,7 @@ local function sendDiscordLog(title, description, color)
     }), { ['Content-Type'] = 'application/json' })
 end
 
-RegisterServerEvent('way_drugsell:checkInventory', function()
+RegisterServerEvent('rs_drugsell:checkInventory', function()
     local xPlayer = ESX and ESX.GetPlayerFromId(source) or QBCore.Functions.GetPlayer(source)
     local inventory = {}
 
@@ -30,10 +30,10 @@ RegisterServerEvent('way_drugsell:checkInventory', function()
         end
     end
 
-    TriggerClientEvent('way_drugsell:openMenu', source, inventory)
+    TriggerClientEvent('rs_drugsell:openMenu', source, inventory)
 end)
 
-RegisterServerEvent('way_drugsell:sellDrug', function(drugName)
+RegisterServerEvent('rs_drugsell:sellDrug', function(drugName)
     local xPlayer = ESX and ESX.GetPlayerFromId(source) or QBCore.Functions.GetPlayer(source)
     local drug = nil
 
@@ -62,21 +62,21 @@ RegisterServerEvent('way_drugsell:sellDrug', function(drugName)
 end)
 
 
-RegisterServerEvent('way_drugsell:callPolice', function(coords)
+RegisterServerEvent('rs_drugsell:callPolice', function(coords)
     local xPlayers = ESX.GetPlayers()
 
     for _, playerId in ipairs(xPlayers) do
         local xPlayer = ESX.GetPlayerFromId(playerId)
         if xPlayer.job.name == 'police' then
             TriggerClientEvent('ox_lib:notify', playerId, { type = 'info', description = Translate["police_alert"] })
-            TriggerClientEvent('way_drugsell:policeBlip', playerId, coords)
+            TriggerClientEvent('rs_drugsell:policeBlip', playerId, coords)
         end
     end
 end)
 
 
 
-RegisterServerEvent('way_drugsell:stealMoney', function(amount)
+RegisterServerEvent('rs_drugsell:stealMoney', function(amount)
     local xPlayer = ESX.GetPlayerFromId(source)
     xPlayer.addMoney(amount)
     sendDiscordLog(Translate["discord_steal_money_title"], Translate["discord_steal_money_desc"]:format(GetPlayerName(source), amount), 16776960) -- Žlutá barva
