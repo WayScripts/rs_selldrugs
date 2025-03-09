@@ -93,14 +93,14 @@ local function sellDrugsToCustomer(drugName)
         local policeChance = math.random(1, 100)
         if policeChance <= Config.PoliceCall then
             if Config.Dispatch == 'defalut' then
-            TriggerServerEvent('way_drugsell:callPolice', GetEntityCoords(PlayerPedId()))
+            TriggerServerEvent('rs_drugsell:callPolice', GetEntityCoords(PlayerPedId()))
             elseif Config.Dispatch == 'custom' then
                     DispatchCall()
             end
         end
     else
         -- NPC koupí drogu
-        TriggerServerEvent('way_drugsell:sellDrug', drugName)
+        TriggerServerEvent('rs_drugsell:sellDrug', drugName)
         TriggerEvent('ox_lib:notify', { type = 'success', description = Translate["drug_sold"] })
     end
 
@@ -169,17 +169,17 @@ local function openDrugMenu(inventory)
     end
 end
 
-RegisterNetEvent('way_drugsell:interactWithCustomer', function()
-    TriggerServerEvent('way_drugsell:checkInventory')
+RegisterNetEvent('rs_drugsell:interactWithCustomer', function()
+    TriggerServerEvent('rs_drugsell:checkInventory')
 end)
 
-RegisterNetEvent('way_drugsell:openMenu', function(inventory)
+RegisterNetEvent('rs_drugsell:openMenu', function(inventory)
     openDrugMenu(inventory)
 end)
 
 if Config.Interaction == 'item' then
-    RegisterNetEvent('way_drugsell:useItem', function()
-        TriggerServerEvent('way_drugsell:checkInventory')
+    RegisterNetEvent('rs_drugsell:useItem', function()
+        TriggerServerEvent('rs_drugsell:checkInventory')
     end)
 end
 
@@ -187,14 +187,14 @@ if Config.Interaction == 'prop' then
     exports.ox_target:addModel(Config.AllowedProps, {
         {
             name = 'sell_drugs_prop',
-            event = 'way_drugsell:useProp',
+            event = 'rs_drugsell:useProp',
             icon = 'fa-solid fa-cannabis',
             label = Translate["sell_drugs"]
         }
     })
 
-    RegisterNetEvent('way_drugsell:useProp', function()
-        TriggerServerEvent('way_drugsell:checkInventory')
+    RegisterNetEvent('rs_drugsell:useProp', function()
+        TriggerServerEvent('rs_drugsell:checkInventory')
     end)
 end
 
@@ -203,14 +203,14 @@ if Config.Interaction == 'radial' then
         title = Config.RadialMenu.title,
         icon = Config.RadialMenu.icon,
         onSelect = function()
-            TriggerServerEvent('way_drugsell:checkInventory')
+            TriggerServerEvent('rs_drugsell:checkInventory')
         end
     })
 end
 
 if Config.Interaction == 'command' then
     RegisterCommand(Config.Command, function()
-        TriggerServerEvent('way_drugsell:checkInventory')
+        TriggerServerEvent('rs_drugsell:checkInventory')
     end)
 end
 
@@ -222,7 +222,7 @@ AddEventHandler('onPedDeath', function(ped)
 
         if #(playerCoords - pedCoords) < 3.0 then
             local stolenMoney = math.random(50, 100) -- 50 % z ceny drogy
-            TriggerServerEvent('way_drugsell:stealMoney', stolenMoney)
+            TriggerServerEvent('rs_drugsell:stealMoney', stolenMoney)
             TriggerEvent('ox_lib:notify', { type = 'success', description = Translate["stolen_money"]:format(stolenMoney) })
         end
     end
