@@ -1,6 +1,6 @@
-# Way Drug Sell
+# RS Drug Sell
 
- Way Drug Sell is a **free** FiveM script that adds interactive and customizable drug selling mechanics to your server. Players can sell drugs using various interactions such as items, props,  commands, or NPC targets. The script includes features like configurable customer locations, animations, and inventory checks to ensure an immersive experience. Fully configurable and optimized, this script is perfect for enhancing roleplay servers.
+ RS Drug Sell is a **free** FiveM script that adds interactive and customizable drug selling mechanics to your server. Players can sell drugs using various interactions such as items, props,  commands, or NPC targets. The script includes features like configurable customer locations, animations, and inventory checks to ensure an immersive experience. Fully configurable and optimized, this script is perfect for enhancing roleplay servers.
 
 ## — FEATURES LIST —
 
@@ -27,11 +27,6 @@ Only drugs in the player's inventory are available for sale.
   * **Optimized Performance**
 Designed to run smoothly on all server setups.
 
-
-## — GET IT FOR FREE —
-
-Download now on GitHub:
-**[Way Drug Sell GitHub](https://github.com/WayScripts/way_drugsell)**
 
 More updates coming soon!
 
